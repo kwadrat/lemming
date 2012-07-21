@@ -1,0 +1,40 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+# Zatwierdzanie zmian z lepsza obsluga polskich liter
+
+import os
+import readline
+
+nazwa_pliku = '/tmp/pracuj'
+plik_historii = os.path.join(os.path.expanduser('~'), '.lemming_history')
+
+def rozwin_nazwe(odp):
+    if odp[0] == '1':
+        wynik = '%s - skopiuj' % odp[1:]
+    elif odp[0] == '2':
+        wynik = '%s - przełącz na kopię' % odp[1:]
+    elif odp[0] == '3':
+        wynik = '%s - usuń oryginał' % odp[1:]
+    else:
+        wynik = odp
+    return wynik
+
+def wykonaj():
+    readline.set_history_length(10000)
+    if os.path.isfile(plik_historii):
+        readline.read_history_file(plik_historii)
+    while os.path.isfile(nazwa_pliku):
+        odp = raw_input('Commit message: ')
+        if odp:
+            odp = rozwin_nazwe(odp)
+            polecenie = 'git commit -m "%s"' % odp
+            os.system(polecenie)
+        else:
+            print 'Pusty napis - koniec pracy'
+            break
+    else:
+        print 'Brakuje pliku, wykonaj:\ntouch %s' % nazwa_pliku
+    readline.write_history_file(plik_historii)
+
+if __name__ == '__main__':
+    wykonaj()
