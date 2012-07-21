@@ -16,9 +16,9 @@ common_phrases = {
 }
 
 def expand_phrase(message):
-    first = message[0]
-    if first in common_phrases:
-        result = common_phrases[first] % message[1:]
+    prefix = message[0]
+    if prefix in common_phrases:
+        result = common_phrases[prefix] % message[1:]
     else:
         result = message
     return result
