@@ -31,7 +31,7 @@ def wykonaj():
             polecenie = 'git commit -m "%s"' % odp
             os.system(polecenie)
         else:
-            print 'Pusty napis - koniec pracy'
+            print 'Empty string - end of work'
             break
     readline.write_history_file(persistent_history)
 
