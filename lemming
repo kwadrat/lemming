@@ -15,9 +15,9 @@ polecenia = {
 }
 
 def rozwin_opis(odp):
-    znak = odp[0]
-    if znak in polecenia:
-        wynik = polecenia[znak] % odp[1:]
+    first = odp[0]
+    if first in polecenia:
+        wynik = polecenia[first] % odp[1:]
     else:
         wynik = odp
     return wynik
