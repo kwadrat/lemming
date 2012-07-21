@@ -4,7 +4,9 @@
 import os
 import readline
 
-persistent_history = os.path.join(os.path.expanduser('~'), '.lemming_history')
+persistent_history = os.path.join(
+  os.path.expanduser('~'),
+  '.lemming_history')
 
 polecenia = {
     '1': '%s - skopiuj',
