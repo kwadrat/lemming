@@ -14,12 +14,12 @@ common_phrases = {
     '3': '%s - usuń oryginał',
 }
 
-def rozwin_opis(odp):
-    first = odp[0]
+def rozwin_opis(message):
+    first = message[0]
     if first in common_phrases:
-        wynik = common_phrases[first] % odp[1:]
+        wynik = common_phrases[first] % message[1:]
     else:
-        wynik = odp
+        wynik = message
     return wynik
 
 def main():
@@ -27,10 +27,10 @@ def main():
     if os.path.isfile(persistent_history):
         readline.read_history_file(persistent_history)
     while 1:
-        odp = raw_input('Commit message: ')
-        if odp:
-            odp = rozwin_opis(odp)
-            polecenie = 'git commit -m "%s"' % odp
+        message = raw_input('Commit message: ')
+        if message:
+            message = rozwin_opis(message)
+            polecenie = 'git commit -m "%s"' % message
             os.system(polecenie)
         else:
             print 'Empty string - end of work'
