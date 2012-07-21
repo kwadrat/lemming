@@ -4,7 +4,6 @@
 import os
 import readline
 
-nazwa_pliku = '/tmp/pracuj'
 persistent_history = os.path.join(os.path.expanduser('~'), '.lemming_history')
 
 polecenia = {
