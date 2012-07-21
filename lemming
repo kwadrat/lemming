@@ -7,6 +7,12 @@ import readline
 nazwa_pliku = '/tmp/pracuj'
 plik_historii = os.path.join(os.path.expanduser('~'), '.lemming_history')
 
+polecenia = {
+    '1': '%s - skopiuj',
+    '2': '%s - przełącz na kopię',
+    '3': '%s - usuń oryginał',
+}
+
 def rozwin_nazwe(odp):
     if odp[0] == '1':
         wynik = '%s - skopiuj' % odp[1:]
