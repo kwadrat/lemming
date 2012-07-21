@@ -13,7 +13,7 @@ polecenia = {
     '3': '%s - usuń oryginał',
 }
 
-def rozwin_nazwe(odp):
+def rozwin_opis(odp):
     znak = odp[0]
     if znak in polecenia:
         wynik = polecenia[znak] % odp[1:]
@@ -28,7 +28,7 @@ def wykonaj():
     while os.path.isfile(nazwa_pliku):
         odp = raw_input('Commit message: ')
         if odp:
-            odp = rozwin_nazwe(odp)
+            odp = rozwin_opis(odp)
             polecenie = 'git commit -m "%s"' % odp
             os.system(polecenie)
         else:
