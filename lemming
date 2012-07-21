@@ -22,7 +22,7 @@ def rozwin_opis(odp):
         wynik = odp
     return wynik
 
-def wykonaj():
+def main():
     readline.set_history_length(10000)
     if os.path.isfile(persistent_history):
         readline.read_history_file(persistent_history)
@@ -38,4 +38,4 @@ def wykonaj():
     readline.write_history_file(persistent_history)
 
 if __name__ == '__main__':
-    wykonaj()
+    main()
