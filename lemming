@@ -5,7 +5,7 @@ import os
 import readline
 
 nazwa_pliku = '/tmp/pracuj'
-plik_historii = os.path.join(os.path.expanduser('~'), '.lemming_history')
+persistent_history = os.path.join(os.path.expanduser('~'), '.lemming_history')
 
 polecenia = {
     '1': '%s - skopiuj',
@@ -23,8 +23,8 @@ def rozwin_opis(odp):
 
 def wykonaj():
     readline.set_history_length(10000)
-    if os.path.isfile(plik_historii):
-        readline.read_history_file(plik_historii)
+    if os.path.isfile(persistent_history):
+        readline.read_history_file(persistent_history)
     while os.path.isfile(nazwa_pliku):
         odp = raw_input('Commit message: ')
         if odp:
@@ -36,7 +36,7 @@ def wykonaj():
             break
     else:
         print 'Brakuje pliku, wykonaj:\ntouch %s' % nazwa_pliku
-    readline.write_history_file(plik_historii)
+    readline.write_history_file(persistent_history)
 
 if __name__ == '__main__':
     wykonaj()
