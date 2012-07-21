@@ -8,7 +8,7 @@ persistent_history = os.path.join(
   os.path.expanduser('~'),
   '.lemming_history')
 
-polecenia = {
+common_phrases = {
     '1': '%s - skopiuj',
     '2': '%s - przełącz na kopię',
     '3': '%s - usuń oryginał',
@@ -16,8 +16,8 @@ polecenia = {
 
 def rozwin_opis(odp):
     first = odp[0]
-    if first in polecenia:
-        wynik = polecenia[first] % odp[1:]
+    if first in common_phrases:
+        wynik = common_phrases[first] % odp[1:]
     else:
         wynik = odp
     return wynik
