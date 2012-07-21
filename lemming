@@ -14,12 +14,9 @@ polecenia = {
 }
 
 def rozwin_nazwe(odp):
-    if odp[0] == '1':
-        wynik = '%s - skopiuj' % odp[1:]
-    elif odp[0] == '2':
-        wynik = '%s - przełącz na kopię' % odp[1:]
-    elif odp[0] == '3':
-        wynik = '%s - usuń oryginał' % odp[1:]
+    znak = odp[0]
+    if znak in polecenia:
+        wynik = polecenia[znak] % odp[1:]
     else:
         wynik = odp
     return wynik
