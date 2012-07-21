@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-# Zatwierdzanie zmian z lepsza obsluga polskich liter
 
 import os
 import readline
