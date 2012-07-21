@@ -30,8 +30,8 @@ def main():
         message = raw_input('Commit message: ')
         if message:
             message = expand_phrase(message)
-            polecenie = 'git commit -m "%s"' % message
-            os.system(polecenie)
+            command = 'git commit -m "%s"' % message
+            os.system(command)
         else:
             print 'Empty string - end of work'
             break
