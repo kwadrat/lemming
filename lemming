@@ -14,7 +14,7 @@ common_phrases = {
     '3': '%s - usuń oryginał',
 }
 
-def rozwin_opis(message):
+def expand_phrase(message):
     first = message[0]
     if first in common_phrases:
         wynik = common_phrases[first] % message[1:]
@@ -29,7 +29,7 @@ def main():
     while 1:
         message = raw_input('Commit message: ')
         if message:
-            message = rozwin_opis(message)
+            message = expand_phrase(message)
             polecenie = 'git commit -m "%s"' % message
             os.system(polecenie)
         else:
