@@ -6,7 +6,8 @@ import readline
 
 persistent_history = os.path.join(
   os.path.expanduser('~'),
-  '.lemming_history')
+  '.lemming_history'
+)
 
 common_phrases = {
     '1': '%s - skopiuj',
