@@ -25,7 +25,7 @@ def wykonaj():
     readline.set_history_length(10000)
     if os.path.isfile(persistent_history):
         readline.read_history_file(persistent_history)
-    while os.path.isfile(nazwa_pliku):
+    while 1:
         odp = raw_input('Commit message: ')
         if odp:
             odp = rozwin_opis(odp)
