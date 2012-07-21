@@ -17,10 +17,10 @@ common_phrases = {
 def expand_phrase(message):
     first = message[0]
     if first in common_phrases:
-        wynik = common_phrases[first] % message[1:]
+        result = common_phrases[first] % message[1:]
     else:
-        wynik = message
-    return wynik
+        result = message
+    return result
 
 def main():
     readline.set_history_length(10000)
