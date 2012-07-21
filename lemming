@@ -34,8 +34,6 @@ def wykonaj():
         else:
             print 'Pusty napis - koniec pracy'
             break
-    else:
-        print 'Brakuje pliku, wykonaj:\ntouch %s' % nazwa_pliku
     readline.write_history_file(persistent_history)
 
 if __name__ == '__main__':
