@@ -10,7 +10,10 @@ persistent_history = os.path.join(
     '.lemming_history'
 )
 
-common_phrases = None
+try:
+    from phrases_lemming import common_phrases
+except ImportError:
+    common_phrases = None
 
 
 def expand_phrase(message):
