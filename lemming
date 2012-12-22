@@ -11,11 +11,6 @@ persistent_history = os.path.join(
 )
 
 common_phrases = None
-common_phrases = {
-    '1': '%s - copy',
-    '2': '%s - switch to copy',
-    '3': '%s - remove original',
-}
 
 
 def expand_phrase(message):
