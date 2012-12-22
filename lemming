@@ -15,6 +15,7 @@ common_phrases = {
     '3': '%s - remove original',
 }
 
+
 def expand_phrase(message):
     prefix = message[0]
     if prefix in common_phrases:
