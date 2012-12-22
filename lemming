@@ -24,6 +24,7 @@ def expand_phrase(message):
         result = message
     return result
 
+
 def main():
     readline.set_history_length(10000)
     if os.path.isfile(persistent_history):
