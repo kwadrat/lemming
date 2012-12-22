@@ -46,7 +46,7 @@ def main():
         else:
             print 'Empty string - end of work'
             break
-    readline.write_history_file(persistent_history)
+    history_end()
 
 if __name__ == '__main__':
     main()
