@@ -10,6 +10,7 @@ persistent_history = os.path.join(
     '.lemming_history'
 )
 
+common_phrases = None
 common_phrases = {
     '1': '%s - copy',
     '2': '%s - switch to copy',
