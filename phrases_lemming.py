@@ -9,4 +9,5 @@ common_phrases = {
     '5': 'Use %s',
     '6': 'Remove %s',
     '7': 'Check %s',
+    '8': 'Import %s',
 }
