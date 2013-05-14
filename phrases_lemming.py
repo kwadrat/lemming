@@ -10,4 +10,5 @@ common_phrases = {
     '6': 'Remove %s',
     '7': 'Check %s',
     '8': 'Import %s',
+    '9': 'Move %s',
 }
