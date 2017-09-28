@@ -43,7 +43,7 @@ def main():
             command = 'git commit -m "%s"' % message
             os.system(command)
         else:
-            print 'Empty string - end of work'
+            print 'Empty string - end of work.'
             break
     history_end()
 
