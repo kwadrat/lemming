@@ -37,7 +37,9 @@ def history_end():
 def main():
     history_start()
     while 1:
-        message = raw_input('Commit message: ')
+        title = 'Commit message: '
+        print len(title) * ' ' + 50 * '-'
+        message = raw_input(title)
         if message:
             message = expand_phrase(message)
             command = 'git commit -m "%s"' % message
