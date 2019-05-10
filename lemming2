@@ -4,6 +4,11 @@
 import os
 import readline
 
+try:
+    both_input = raw_input
+except NameError:
+    both_input = input
+
 persistent_history = os.path.join(
     os.path.expanduser('~'),
     '.lemming_history'
@@ -38,14 +43,14 @@ def main():
     history_start()
     while 1:
         title = 'Commit message: '
-        print len(title) * ' ' + 50 * '-'
-        message = raw_input(title)
+        print(len(title) * ' ' + 50 * '-')
+        message = both_input(title)
         if message:
             message = expand_phrase(message)
             command = 'git commit -m "%s"' % message
             os.system(command)
         else:
-            print 'Empty string - end of work.'
+            print('Empty string - end of work.')
             break
     history_end()
 

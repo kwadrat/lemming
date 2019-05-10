@@ -4,6 +4,11 @@
 import os
 import readline
 
+try:
+    both_input = raw_input
+except NameError:
+    both_input = input
+
 persistent_history = os.path.join(
     os.path.expanduser('~'),
     '.lemming_history'
@@ -39,7 +44,7 @@ def main():
     while 1:
         title = 'Commit message: '
         print(len(title) * ' ' + 50 * '-')
-        message = input(title)
+        message = both_input(title)
         if message:
             message = expand_phrase(message)
             command = 'git commit -m "%s"' % message
